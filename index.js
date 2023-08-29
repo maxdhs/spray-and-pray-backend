@@ -49,7 +49,7 @@ app.delete("/users/:userId", async (req, res) => {
   }
 });
 
-app.use(() => {
+app.use((req, res) => {
   res.send({ success: false, error: "No route found." });
 });
 
