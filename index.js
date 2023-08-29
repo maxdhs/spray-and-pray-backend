@@ -49,4 +49,8 @@ app.delete("/users/:userId", async (req, res) => {
   }
 });
 
+app.use(() => {
+  res.send({ success: false, error: "No route found." });
+});
+
 app.listen(3000, () => console.log("server is up"));
