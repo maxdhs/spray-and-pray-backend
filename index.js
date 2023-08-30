@@ -17,10 +17,10 @@ app.get("/users", async (req, res) => {
 
 app.put("/users/:userId", async (req, res) => {
   try {
-    const { count } = req.body;
+    const { count, name } = req.body;
     const user = await prisma.user.update({
       where: { id: req.params.userId },
-      data: { count },
+      data: { count, name },
     });
     res.send({ success: true, user });
   } catch (error) {
