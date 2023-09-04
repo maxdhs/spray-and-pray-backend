@@ -53,4 +53,8 @@ app.use((req, res) => {
   res.send({ success: false, error: "No route found." });
 });
 
+app.use((error, req, res, next) => {
+  res.send({ success: false, error: error.message });
+});
+
 app.listen(3000, () => console.log("server is up"));
